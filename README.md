@@ -11,8 +11,8 @@ Nach Installation:
 2. audo auf 3.5mm fixieren: https://stackoverflow.com/questions/30377129/playing-audio-on-raspberry-pi-with-java/30520683#30520683
 3. install openjdk: https://www.raspberrypi.org/forums/viewtopic.php?t=199813
 4. sound für openjdk aktivieren: https://nealvs.wordpress.com/2017/08/11/java-sound-on-a-raspberry-pi-with-openjdk/
-5. mit scp jar file kopieren: http://www.hypexr.org/linux_scp_help.php
-zb: <git_repo>/raspberrypi/target > scp raspberrypi-0.0.1-SNAPSHOT.jar pi@192.168.0.12:/home/pi
+5. mit scp jar file (und weitere files) kopieren: http://www.hypexr.org/linux_scp_help.php
+zb: `<git_repo>/raspberrypi/target > scp raspberrypi.jar pi@192.168.0.12:/home/pi`
 
 # Command um Raspberry zu rebooten
 `sudo reboot`
@@ -34,7 +34,8 @@ zb: <git_repo>/raspberrypi/target > scp raspberrypi-0.0.1-SNAPSHOT.jar pi@192.16
 
 ### Java GUI autostart einrichten: https://www.youtube.com/watch?v=VQkvh6d41Y0
 1. lege shellscript wrapper für Java Aufruf an
-* `sudo nano ~/timer.sh -> Inhalt "java -jar raspberry.jar"`
+* `sudo nano ~/timer.sh`
+  * Inhalt ist `java -jar raspberry.jar` bzw  `java -Dproperties=sound.properties -jar raspberry.jar` für Alarm.java
 * `sudo chmod ugo+x ~/timer.sh`
 
 2. shellscript beim Start des Terminals starten
