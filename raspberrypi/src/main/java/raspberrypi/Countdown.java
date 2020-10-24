@@ -14,7 +14,7 @@ import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
-public class Main {
+public class Countdown {
 	private static JEditorPane htmlTextArea = new JEditorPane("text/html", html(0));
 
 	private static void createAndShowGUI() {
@@ -35,15 +35,8 @@ public class Main {
 		int min = nr / 60;
 		int sec = nr - min * 60;
 		String text = String.format("%02d", min) + ":" + String.format("%02d", sec);
-		return "<html>\n"
-				+ "<p style=\""
-				+ "color:black;"
-				+ "background-color:white;"
-				+ "font-size:3.2em;"
-				+ "text-align: center;"
-				+ "font-family: sans-serif;"
-				+ "\">" + text + "</p>\n" +
-				"</html>\n";
+		return "<html>\n" + "<p style=\"" + "color:black;" + "background-color:white;" + "font-size:3.2em;"
+				+ "text-align: center;" + "font-family: sans-serif;" + "\">" + text + "</p>\n" + "</html>\n";
 	}
 
 	static int INITIAL_DELAY = 600;
@@ -81,7 +74,7 @@ public class Main {
 
 	private static Clip setupClip() {
 		try {
-			AudioInputStream audioIn = AudioSystem.getAudioInputStream(Main.class.getResource("/alarm.wav"));
+			AudioInputStream audioIn = AudioSystem.getAudioInputStream(Countdown.class.getResource("/alarm.wav"));
 			Clip clip = AudioSystem.getClip();
 			clip.open(audioIn);
 			return clip;

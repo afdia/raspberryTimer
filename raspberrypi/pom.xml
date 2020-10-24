@@ -24,7 +24,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>2.2.5.RELEASE</version>
 				<configuration>
-					<mainClass>raspberrypi.Main</mainClass>
+					<mainClass>raspberrypi.Alarm</mainClass>
 					<layout>JAR</layout>
 				</configuration>
 				<executions>
